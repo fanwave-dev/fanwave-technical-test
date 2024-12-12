@@ -6,11 +6,9 @@
         </div>
     </main>
 </template>
-<script setup>
+<script setup lang="ts">
 
-const showError = ref(false)
-
-const { status, data, error } = await useFetch('http://backend.localhost/api/welcome', {
+const { data, error } = await useFetch('http://backend.localhost/api/welcome', {
     async onResponseError({ request, response, options }) {
         showError.value = response._data.error
     },
