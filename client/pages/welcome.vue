@@ -7,11 +7,9 @@
     </main>
 </template>
 <script setup lang="ts">
-
 const { data, error } = await useFetch('http://backend.localhost/api/welcome', {
     async onResponseError({ request, response, options }) {
         showError.value = response._data.error
     },
 })
-
 </script>
